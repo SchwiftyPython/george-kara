@@ -112,8 +112,12 @@ namespace DerpusAdviceBot
 
         public AdviceModule()
         {
+            Console.WriteLine($"{Prefix.Info} Loading Advice Module...");
+
             LoadTriggerLookup();
             LoadTraceryText();
+
+            Console.WriteLine($"{Prefix.Info} Advice Module Loaded");
         }
 
         // !advice How do I grow tomatoes?
@@ -163,6 +167,8 @@ namespace DerpusAdviceBot
         private void LoadTraceryText()
         {
             _traceryText = LoadJson();
+
+            Console.WriteLine($"{Prefix.Info} Tracery Text Loaded");
         }
 
         private string LoadJson()
@@ -183,6 +189,8 @@ namespace DerpusAdviceBot
             {
                 AddCategoryTriggers(cat);
             }
+
+            Console.WriteLine($"{Prefix.Info} Trigger Lookups Loaded");
         }
 
         private void AddCategoryTriggers(Category cat)
